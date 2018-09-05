@@ -11,8 +11,8 @@ class Interface extends Component{
   }
   fetchBooksData = (e) => {
     e.preventDefault()
-    console.log(e)
-    console.log(this.state.searchInput)
+    // console.log(e)
+    // console.log(this.state.searchInput)
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchInput}&maxResults=40&key=AIzaSyAiVTzMNKM_dzWks7V4MiSchGeGih_u5ts`)
       .then( res => res.json())
       .then( resJSON => this.setState({searchResults: resJSON.items}))
@@ -20,7 +20,7 @@ class Interface extends Component{
   render(){
     return(
       <div>
-        <form onSubmit={this.fetchBooksData}>
+        <form className="InputBox" onSubmit={this.fetchBooksData}>
           <input type="text" value={this.state.searchInput} onChange={this.handleSearch}/>
           <input type="submit" value="Submit"/>
         </form>
