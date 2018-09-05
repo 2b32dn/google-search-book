@@ -13,7 +13,7 @@ class Interface extends Component{
     e.preventDefault()
     // console.log(e)
     // console.log(this.state.searchInput)
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchInput}&maxResults=40&key=AIzaSyAiVTzMNKM_dzWks7V4MiSchGeGih_u5ts`)
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${this.state.searchInput}&maxResults=40&key=(KEY)`)
       .then( res => res.json())
       .then( resJSON => this.setState({searchResults: resJSON.items}))
   }
